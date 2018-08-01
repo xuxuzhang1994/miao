@@ -1,0 +1,170 @@
+<!--index.wxml-->
+<custom-navigation title='猫了个喵喵'></custom-navigation>
+<!--index.wxml-->
+<view class="index">
+  <view class='tab-bar flex {{currenTab ==2 ? "current-tab2" : "" }}{{currenTab ==3 ? "current-tab3" : ""}}'>
+    <!--<i class='iconfont icon-tabulation type' catchtap="addPhoto"></i>-->
+    <i class='iconfont icon-zhongtumoshi type' catchtap="addPhoto"></i>
+    <view class='tab flex'>
+      <span class='{{currenTab ==1 ? "current-tab" : "" }}' catchtap="changeTabbar" data-index="1">后宫</span>
+      <span class='{{currenTab ==2 ? "current-tab" : "" }}' catchtap="changeTabbar" data-index="2">发现</span>
+      <span class='{{currenTab ==3 ? "current-tab" : "" }}' catchtap="changeTabbar" data-index="3">科普</span>
+    </view>
+    <i class='iconfont icon-jiahao1 add-photo' catchtap="addPhoto"></i>
+  </view>
+  <view class='banner' wx:if='{{currenTab == 2}}'>
+    <swiper autoplay="true" circular="true" class="banner-block bg-white" duration="300" indicatorActiveColor="rgba(0, 0, 0, .5)" indicatorDots="{{banner.length>1}}" >
+      <swiper-item catchtap="mkadGo" class="item" data-path="{{item.path}}" wx:for="{{[1,2,3]}}">
+        <image src="http://wl.laohu.com/_s/20180522/792-1.jpg"></image>
+      </swiper-item>
+    </swiper>
+    <view class='sort flex'>
+      <span>今日猫榜</span>
+      <view class='sort-list'>
+        <image wx:for='{{flow_data}}' wx:if='{{index<6}}' src='{{item.cardInfo.cardInfo.picture}}'></image>
+      </view>
+      <i class='iconfont icon-fanhui2'></i>
+    </view>
+  </view>
+  <view class='concentration' wx:if='{{currenTab == 2}}'>
+    <view class='top flex'>
+      <view class='left'>
+        <view class='tag'>精选传记</view>
+        <view class='title'>一只猫不会孤独</view>
+        <view class='content'>
+          因为自己上学父母又忙 <br/>
+          肥仔大多数的时候只能一个猫待在阳台
+        </view>
+      </view>
+      <image  src='http://wl.laohu.com/_s/20180522/792-1.jpg'></image>
+    </view>
+    <view class='bottom flex'>
+      <view class='left flex'>
+        <view class='flex-align-center look'>
+          <i class='iconfont icon-wodefankui'></i>
+          <span>50</span>
+        </view>
+        <view class='flex-align-center'>
+          <i class='iconfont icon-31guanzhu1xuanzhong'></i>
+          <span>50</span>
+        </view>
+      </view>
+      <view class='right flex-align-center'>
+        <image class='avatar' src='http://wl.laohu.com/_s/20180522/792-1.jpg'></image>
+        <span>唐肥仔</span>
+      </view>
+    </view>
+  </view>
+  <scroll-view>
+    <view class="discover-list" wx:if='{{currenTab == 1}}'>
+      <view class='discover-item'
+            wx:for="{{flow_data}}" wx:for-item="i">
+        <view class='header flex'>
+          <image class='pin' mode="widthFix"
+                 src="{{i.card_info.avatar}}"></image>
+          <view class='person-info'>
+            <view>{{i.card_info.name}}</view>
+            <view>{{i.card_info.like}}</view>
+          </view>
+          <view class='follow'>
+            已关注
+          </view>
+        </view>
+        <view class='disc'>{{i.detail_info.text}}</view>
+        <!--图片视屏-->
+        <view class='media flex'>
+          <video wx:for="{{i.detail_info.images}}"
+                 wx:for-item="j"
+                 wx:if="{{i.detail_info.type == 'video'}}"  id="myVideo"
+                 src="{{j}}"></video>
+          <image wx:if="{{i.detail_info.type == 'news'}}"
+                 wx:for="{{i.detail_info.images}}"
+                 wx:for-item="j"
+                 class="img {{i.detail_info.images.length == 1?'only-one':''}}"
+                 mode="scaleToFill"
+                 src="{{j}}"></image>
+        </view>
+        <!--评论点赞-->
+        <view class='commoent flex'>
+          <view class='commoent-item flex' >
+            <i class='iconfont icon-wodefankui'></i>
+            <text>50</text>
+          </view>
+          <view class='commoent-item flex' bindtap='like'>
+            <i class='iconfont icon-31guanzhu1'></i>
+            <text>50</text>
+          </view>
+          <view class='commoent-item flex'>
+            <i class='iconfont icon-lingcunwei'></i>
+            <text>50</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="discover-list" wx:if='{{currenTab == 2}}'>
+      <view class='discover-item'
+            wx:for="{{flow_data}}" wx:for-item="i">
+        <view class='header flex' catchtap='goCardDetail'>
+          <image class='pin' mode="widthFix"
+                 src="{{i.cardInfo.cardInfo.picture}}"></image>
+          <view class='person-info'>
+            <view>{{i.cardInfo.cardInfo.name}}</view>
+            <view>{{i.cardInfo.cardInfo.content}}</view>
+          </view>
+          <view class='follow'>
+            已关注
+          </view>
+        </view>
+        <view catchtap='goPhotoDetail' data-item='{{i}}'>
+          <view class='disc'>{{i.activeInfo.activeInfo.content}}</view>
+          <!--图片视屏-->
+          <view class='media flex'>
+            <video wx:for="{{i.detail_info.images}}"
+                   wx:for-item="j"
+                   wx:if="{{i.detail_info.type == 'video'}}"  id="myVideo"
+                   src="{{j}}"></video>
+            <image wx:if="{{i.activeInfo.activeInfo.activeType == 'img'}}"
+                   wx:for="{{i.activeInfo.activeInfo.photoList}}"
+                   wx:for-item="j"
+                   class="img {{i.activeInfo.activeInfo.photoList.length == 1?'only-one':''}}"
+                   mode="widthFix"
+                   src="{{j}}"></image>
+          </view>
+        </view>
+
+        <!--评论点赞-->
+        <view class='commoent flex'>
+          <view class='commoent-item flex' >
+            <i class='iconfont icon-wodefankui'></i>
+            <text>{{i.commentList.length}}</text>
+          </view>
+          <view class='commoent-item flex' bindtap='like'>
+            <i class='iconfont {{i.isLike?"icon-31guanzhu1xuanzhong":"icon-31guanzhu1"}}'></i>
+            <text>{{i.likeLength}}</text>
+          </view>
+          <view class='commoent-item flex'>
+            <i class='iconfont icon-lingcunwei'></i>
+            <text>50</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='knowledge-content' wx:if='{{currenTab == 3}}'>
+      <view class='knowledge-list'>{{article_index.article_info}}
+        <view class='knowledge-item flex' wx:for='{{article_index}}'>
+          <view class='info'>
+            <view class='title'>
+              {{item.article_info.title}}
+            </view>
+            <view class='detail'>
+              {{item.article_info.intro}}
+            </view>
+          </view>
+          <image class='thumb' src='{{item.article_info.cover}}'></image>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <z-like wx:if='{{like_show}}'></z-like>
+</view>
+

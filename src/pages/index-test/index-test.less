@@ -1,0 +1,22 @@
+/* 单个图片容器的样式 */
+.img_item {
+  width: 31%;
+  margin: 1%;
+  display: inline-block;
+  vertical-align: top;
+
+  image{
+    position: relative;
+    &:after {
+      content: "";
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: #ccc;
+      z-index: -1;
+    }
+
+  }
+}

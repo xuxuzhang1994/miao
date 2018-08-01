@@ -1,0 +1,58 @@
+<view class='add-card'>
+  <custom-navigation showBack="true" title='添加小宝贝'></custom-navigation>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class='header flex' catchtap='addPhoto'>
+      <image src='{{img || "../../../../../img/cat-default.png"}}'></image>
+    </view>
+    <view class="section">
+      <span>宠物名称</span>
+      <input placeholder-style="color:#999" name='name' class='data' placeholder="设置宠物名称"/>
+    </view>
+    <view class="section">
+      <span>宠物性别</span>
+      <view class='sex'>
+        <span data-sex='1' catchtap='changeSex' class='{{sex==1?"current-sex":""}}'>男</span>
+        <span data-sex='2' catchtap='changeSex' class='{{sex==2?"current-sex":""}}'>女</span>
+      </view>
+    </view>
+    <view class="section">
+      <span>体重</span>
+      <view class='sex'>
+        <input placeholder-style="color:#999" name='weight' class='data' placeholder="体重是以kg为单位哦"/>
+      </view>
+    </view>
+    <view class="section">
+      <span>宠物生日</span>
+      <picker class='data' mode="date" value="{{birthday}}" start="2015-09-01" end="2018-07-24"
+              bindchange="bindBirthdayChange">
+        <view wx:if='{{birthday}}'>
+          {{birthday}}
+        </view>
+        <view class='color-gray' wx:if='{{!birthday}}'>
+          选择时间:
+        </view>
+      </picker>
+    </view>
+    <view class="section">
+      <span>到家时间</span>
+      <picker  class='data' mode="date" value="{{homeday}}" start="2015-09-01" end="2018-07-24"
+               bindchange="bindHomedayChange">
+        <view wx:if='{{homeday}}'>
+          {{homeday}}
+        </view>
+        <view class='color-gray' wx:if='{{!homeday}}'>
+          选择时间:
+        </view>
+      </picker>
+    </view>
+    <view class='textarea'>
+      <textarea bindblur="bindTextAreaBlur" name='content' placeholder="说点什么..." />
+    </view>
+    <view class='btn-box flex'>
+      <button class='save-btn btn-null' formType="submit">保存</button>
+    </view>
+  </form>
+  <loading hidden="{{!loading}}">
+    加载中...
+  </loading>
+</view>

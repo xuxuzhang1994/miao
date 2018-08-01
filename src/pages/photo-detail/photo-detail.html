@@ -1,0 +1,78 @@
+<!--index.wxml-->
+<custom-navigation title='猫卡' showBack='true'></custom-navigation>
+<view class="photo-detail">
+  <view class='flex detail-title'>
+      <view class="title-box flex">
+        <image mode="widthFix" class='title-img' src='{{cardInfo.cardInfo.picture}}'></image>
+        <view class="">
+          <view>{{cardInfo.cardInfo.name}}</view>
+          <view class='title-day'>{{cardInfo.cardInfo.age}}岁</view>
+        </view>
+      </view>
+      <view class="title-follow" catchtap='editLike' wx:if='{{cardInfo.islike==1}}'>取消关注</view>
+      <view class="title-follow" catchtap='editLike' wx:if='{{cardInfo.islike==2}}'>关注</view>
+  </view>
+  <view class="detail-container">
+    <view class="detail-content" >{{activeInfo.activeInfo.content}}</view>
+    <view class="flex img-box">
+      <image mode="widthFix" class='content-img'  wx:for="{{activeInfo.activeInfo.photoList}}"
+             src='{{item}}'></image>
+    </view>
+  </view>
+  <view class='comment'>
+    <view class='title'>评论</view>
+    <view class='comment-list' wx:for='{{commentList}}' wx:for-item="item">
+      <view class='comment-item flex' data-item='{{item}}' catchtap='reply'>
+        <image src='{{item.userInfo.avatarUrl}}'></image>
+        <view class='comment-detail'>
+          <view class='top flex'>
+            <span class='name'>{{item.userInfo.nickName}}</span>
+            <span class='time'>{{item.commentInfo.createTime}}</span>
+          </view>
+          <view class='bottom'>{{item.commentInfo.comment}}</view>
+          <view class='reply'>
+            <view  wx:for='{{item.child}}' wx:for-item="child" data-item='{{child}}' catchtap='reply'>
+              <view class='flex'>
+                <span class='nickName'>{{child.userInfo.nickName}}</span>
+                <span class='reply-text' wx:if='{{child.parentUserInfo}}'>回复</span>
+                <sapn class='nickName' wx:if='{{child.parentUserInfo}}'>{{child.parentUserInfo.nickName}}</sapn>
+                <span>: {{child.commentInfo.comment}}</span>
+              </view>
+              <!--<view class='flex' wx:for='{{child.child}}' wx:for-item="sunzai" data-item='{{sunzai}}' catchtap='reply'>-->
+                <!--<span class='nickName'>{{sunzai.userInfo.nickName}} </span>-->
+                <!--<span class='reply-text'>回复</span>-->
+                <!--<sapn  class='nickName'>{{child.userInfo.nickName}}：</sapn>-->
+                <!--<span>{{sunzai.commentInfo.comment}}</span>-->
+              <!--</view>-->
+            </view>
+
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="detail-footer flex">
+    <view class="footer-input">
+      <input placeholder-style="color:#999;"
+             bindconfirm = 'submit'
+             value="{{inputTxt}}"
+             focus="{{focus}}"
+             confirm-type='send' name='weight' class='data' placeholder="{{placeholder}}"/>
+    </view>
+    <view class="footer-icon flex">
+      <view class='commoent-item flex' bindtap='comment'>
+        <i class='iconfont icon-wodefankui'></i>
+        <text>评论</text>
+      </view>
+      <view class='commoent-item flex {{animation?"like-fadeIn":""}}' bindtap='activeLike'>
+        <i class='iconfont  {{isLike?"icon-31guanzhu1xuanzhong":"icon-31guanzhu1"}}'></i>
+        <text>{{likeLength}}</text>
+      </view>
+      <view class='commoent-item flex'>
+        <i class='iconfont icon-lingcunwei'></i>
+        <text>转发</text>
+      </view>
+    </view>
+  </view>
+
+</view>

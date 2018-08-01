@@ -1,0 +1,68 @@
+<custom-navigation title='我的宝贝儿们' changeCard='true'></custom-navigation>
+<view class='card'>
+  <view class='tab flex'>
+    <span class='tab-item active'>我的主子</span>
+    <span class='tab-item'>我的关注</span>
+  </view>
+  <!--<view class='card-detail flex'>-->
+    <!--<view class='left'>-->
+      <!--<view class='name'>faker</view>-->
+      <!--<view class='other flex'>-->
+        <!--<view class='sex flex'>-->
+          <!--<i class='iconfont icon-nan font-12'></i>-->
+          <!--<text>未绝育</text>-->
+        <!--</view>-->
+        <!--<text class='age'>0.26岁</text>-->
+        <!--<text class='constellation'>白羊座</text>-->
+      <!--</view>-->
+      <!--<view class='weigth flex'>-->
+        <!--<i class='iconfont icon-chongwu font-14'></i>-->
+        <!--<text>体重4kg</text>-->
+      <!--</view>-->
+      <!--<view class='like flex'>-->
+        <!--<i class='iconfont icon-yu font-16'></i>-->
+        <!--<text>比较皮</text>-->
+      <!--</view>-->
+      <!--<view class='energy flex'>-->
+        <!--<i class='iconfont icon-31guanzhu1 font-14'></i>-->
+        <!--<text>能量总值100g</text>-->
+      <!--</view>-->
+    <!--</view>-->
+    <!--<view class='right'>-->
+      <!--<image class='photo' src='https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eoog78b9l4IAn1El29RJmnxqCRkow9UZAtU5oJxHkVyA59iaTdWQptH7XgqTOmxPMylxGNFCUCkiaAg/132'></image>-->
+      <!--<view class='card-no'>猫卡号：856851</view>-->
+    <!--</view>-->
+  <!--</view>-->
+  <view class='card-detail flex' wx:for='{{cardList}}'>
+    <view class='left'>
+      <view class='name'>{{item.cardInfo.name}}</view>
+      <view class='other flex'>
+        <view class='sex flex'>
+          <i class='iconfont icon-nan font-12'></i>
+          <text>未绝育</text>
+        </view>
+        <text class='age'>{{item.cardInfo.age}}岁</text>
+        <text class='constellation'>{{item.cardInfo.constellation}}</text>
+      </view>
+      <view class='weigth flex'>
+        <i class='iconfont icon-chongwu font-14'></i>
+        <text>体重{{item.cardInfo.weight}}kg</text>
+      </view>
+      <view class='like flex'>
+        <i class='iconfont icon-yu font-16'></i>
+        <text>{{item.cardInfo.content}}</text>
+      </view>
+      <view class='energy flex'>
+        <i class='iconfont icon-31guanzhu1 font-14'></i>
+        <text>能量总值100g</text>
+      </view>
+    </view>
+    <view class='right'>
+      <image class='photo' src='{{item.cardInfo.picture}}'></image>
+      <view class='card-no'>猫卡号：{{item.cardid}}</view>
+    </view>
+  </view>
+  <view class='add-card' catchtap='addCard'>
+    添加你的小宝贝
+  </view>
+</view>

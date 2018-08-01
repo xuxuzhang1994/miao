@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "z-like": "/components/like/like",
+    "custom-navigation": "/components/custom-navigation/custom-navigation"
+  },
+  "disableScroll": true
+}

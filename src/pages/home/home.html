@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="index">
+  <view class="login-bg">
+  <view class="login">
+    <view class="login-title">{{ staticText.title }} </view>
+    <view class="login-block">
+      <view class="login-input border-b"><input type="text" bindinput ="accountInput" value="{{account}}" placeholder="{{staticText.user}}" confirm-type="done" bindconfirm="confirmAccount" /></view>
+      <view class="login-input border-b"><input type="text" password bindinput ="passwordInput"  value="{{password}}" placeholder="{{staticText.password}}" maxlength="18" confirm-type="done" bindconfirm="confirm" focus="{{focus}}" /></view>
+    </view>
+    <view class="login-btn">
+      <button class="btn color-white text-center" bindtap="goDetail">进入工作台</button>
+    </view>
+  </view>
+    <view class="tip color-white text-center"><view class="tip-text"><text class="iconfont icon-tel"></text>{{staticText.tip}}</view></view>
+  </view>
+</view>
+`

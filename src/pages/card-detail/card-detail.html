@@ -1,0 +1,100 @@
+<!--index.wxml-->
+<custom-navigation title='卡片详情' showBack='true'></custom-navigation>
+<view class="card-detail">
+  <view class='banner'>
+    <swiper  circular="true"  class="banner-block bg-white" duration="300"
+            previous-margin="30px"
+            next-margin="30px"
+            indicatorActiveColor="#ff0000" indicatorDots="true" >
+      <swiper-item catchtap="mkadGo" class="item" data-path="{{item.path}}" wx:for="{{[1,2,3]}}">
+        <view class='card-item flex'>
+          <view class='left'>
+            <view class='name'>faker</view>
+            <view class='other flex'>
+              <view class='sex flex'>
+                <i class='iconfont icon-nan font-12'></i>
+                <text>未绝育</text>
+              </view>
+              <text class='age'>0.26岁</text>
+              <text class='constellation'>白羊座</text>
+            </view>
+            <view class='weigth flex'>
+              <i class='iconfont icon-chongwu font-14'></i>
+              <text>体重4kg</text>
+            </view>
+            <view class='like flex'>
+              <i class='iconfont icon-yu font-16'></i>
+              <text>比较皮</text>
+            </view>
+            <view class='energy flex'>
+              <i class='iconfont icon-31guanzhu1 font-14'></i>
+              <text>能量总值100g</text>
+            </view>
+          </view>
+          <view class='right'>
+            <image class='photo' src='https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eoog78b9l4IAn1El29RJmnxqCRkow9UZAtU5oJxHkVyA59iaTdWQptH7XgqTOmxPMylxGNFCUCkiaAg/132'></image>
+            <view class='card-no'>猫卡号：856851</view>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class='sort-food'>
+    <view class='top'>
+      <view class="loves-body">
+        <view class="name">土豆的能量零食</view>
+        <view class="progress-info">
+          <view class="progress" style="width:50%;"></view>
+          <text>100kg</text>
+        </view>
+      </view>
+    </view>
+    <view class='duihuan-btn' catchtap="goGoods">兑换</view>
+    <view class='bottom flex'>
+      <view class='left'>
+        <view>投食榜</view>
+        <view>10.23kg</view>
+      </view>
+      <view class='right'>
+        <view class='like-list'>
+          <image wx:for="{{[1,2,3,4,5]}}" class='like-item'
+                  src='https://cdn.maoka777.com/opo4k0TrQyuMexH7xOpwj64keZEw_1528249512_2d550f.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='doctor flex'>
+    <span>医生咨询</span>
+    <i class='iconfont icon-fanhui2'></i>
+  </view>
+  <view class='meet flex'>
+    <image src="https://cdn.maoka777.com/opo4k0TrQyuMexH7xOpwj64keZEw_1528249512_2d550f.png"></image>
+    <view class='info'>
+      <view class='time'>相遇72天</view>
+      <view class='number'>有两篇传记</view>
+    </view>
+    <i class='iconfont icon-fanhui2'></i>
+  </view>
+  <view class='footer flex'>
+    <view class='mine flex'>
+      <image src="https://cdn.maoka777.com/opo4k0TrQyuMexH7xOpwj64keZEw_1528249512_2d550f.png"></image>
+      <view>
+        <view class='name'>倩</view>
+        <view class='number'>有1张猫卡</view>
+      </view>
+    </view>
+    <view class='menu flex'>
+      <view>
+        <i class='iconfont icon-home'></i>
+        <view cl>首页</view>
+      </view>
+      <view>
+        <i class='iconfont icon-maomi'></i>
+        <view>我的</view>
+      </view>
+    </view>
+    <view class='cancle'>
+      取消关注
+    </view>
+  </view>
+</view>

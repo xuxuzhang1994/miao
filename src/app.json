@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/photo-detail/photo-detail",
+    "pages/cat-sort/cat-sort",
+    "pages/publish/publish",
+    "pages/goods-detail/goods-detail",
+    "pages/store/store",
+    "pages/card/card",
+    "pages/card-detail/card-detail",
+    "pages/add-card/add-card",
+    "pages/mine/mine",
+    "pages/index-test/index-test",
+    "pages/add-activity/add-activity",
+    "pages/favorite/favorite",
+    "pages/home/home",
+    "pages/exchange-record/exchange-record"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#ffc0cb",
+    "navigationBarTitleText": "猫了个喵喵",
+    "navigationBarTextStyle": "#ffc0cb",
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": false,
+    "backgroundColor": "#eeeeee",
+    "backgroundColorBottom": "#eeeeee"
+  },
+  "tabBar": {
+    "color": "#9b9b9b",
+    "selectedColor": "#ffc0cb",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "img/tab-bar/index.png",
+        "selectedIconPath": "img/tab-bar/index-select.png"
+      },
+      {
+        "pagePath": "pages/card/card",
+        "text": "猫卡",
+        "iconPath": "img/tab-bar/cards.png",
+        "selectedIconPath": "img/tab-bar/cards-select.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我",
+        "iconPath": "img/tab-bar/user.png",
+        "selectedIconPath": "img/tab-bar/user-select.png"
+      }
+    ]
+  },
+  "color": "#000000",
+  "selectedColor": "#d53c3e",
+  "backgroundColor": "#eeeeee",
+  "borderStyle": "black",
+  "position": "bottom"
+}

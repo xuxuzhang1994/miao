@@ -1,0 +1,41 @@
+.like{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-70%);
+  width: 300rpx;
+  height: 300rpx;
+}
+.like-act-list {
+  width: 200px;
+  height: 180px;
+  position: fixed;
+  z-index: 20;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-70%);
+  overflow: hidden;
+}
+
+@keyframes test {
+  0%{
+    top: 0;
+  }
+  100%{
+    top: -3240px;
+  }
+}
+
+.like-act-list image {
+  width: 200px;
+  height: 180px;
+  vertical-align: top;
+}
+
+.like-act-list .inner {
+  position: absolute;
+  width: 200px;
+  top: 0;
+  left: 0;
+  animation: test .7s  steps(18) ;
+}

@@ -1,0 +1,35 @@
+<view class='publish'>
+  <custom-navigation bind:myevent="onMyEvent" changeCard='true'></custom-navigation>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class='belong-to flex'>
+      <view class='info flex'>
+        <image src='{{cardInfo.cardInfo.picture}}'></image>
+        <view>
+          <view class='name'>{{cardInfo.cardInfo.name}}</view>
+          <view class='day'>{{cardInfo.cardInfo.age}}</view>
+        </view>
+      </view>
+      <view class='btn-box flex'>
+        <button class='btn btn-null' catchtap='goBack'>取消</button>
+        <button class='btn btn-null' formType="submit">提交</button>
+      </view>
+    </view>
+    <view class='textarea'>
+      <textarea bindblur="bindTextAreaBlur" name='textarea' placeholder="说点什么..." />
+    </view>
+    <view class='media flex'>
+      <view class='media-item' wx:for='{{AppPhotosTemp}}'>
+        <image mode="aspectFill" src='{{item}}'></image>
+        <i class='iconfont icon-guanbi1' data-index='{{index}}' catchtap='delPhoto'></i>
+      </view>
+      <view class='media-add' catchtap='addPhoto' wx:if='{{AppPhotosTemp.length<6}}'>
+        <i class='iconfont icon-jiahao1'></i>
+      </view>
+    </view>
+    <view class='address'>
+      <i class='iconfont icon-home'></i>
+      <span catchtap='getLocation' wx:if='{{!locationInfo}}'>获取位置信息</span>
+      <span catchtap='getLocation' wx:if='{{locationInfo}}'>{{locationInfo.address}}</span>
+    </view>
+  </form>
+</view>

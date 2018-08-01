@@ -1,0 +1,63 @@
+/**index.wxss**/
+.Pseudo-border-after() {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background:#ccc;
+  .scaleY(.5);
+  .transform-origin(0 0);
+}
+
+.home{
+  position: relative;
+  .login-bg{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: url("https://t-rep.vchangyi.com/common/20171202/B538D3637F00000165C3EACC5E29FB65/15DB3E567F0000013ADA43C14145C0E3.png?atId=15DB3E567F0000013ADA43C14145C0E3"
+    ) no-repeat;
+    background-size: cover;
+    z-index: -1;
+  }
+  .login{
+    background: white;
+    margin: 60rpx 65rpx ;
+    box-shadow: 0 1rpx 10rpx 0 rgba(0,82,128,0.15);
+    border-radius:8rpx ;
+    padding: 0rpx  32rpx  0rpx  32rpx;
+    .login-title{
+      padding-top: 60rpx;
+      margin-bottom:90rpx;
+      font-size: 40rpx;
+    }
+    .login-input{
+      padding: 18rpx 0;
+      font-size: 28rpx;
+      line-height: 1;
+    }
+    .login-btn{
+      margin-top: 120rpx;
+      padding-bottom: 109rpx;
+      .btn{
+        height: 90rpx;
+        background: burlywood;
+      }
+    }
+  }
+  .tip{
+    width: 100%;
+    position: fixed;
+    bottom:60rpx;
+    font-size: 28rpx;
+    .tip-text{
+      display: inline;
+      .icon-tel{
+        font-size: 28rpx;
+        margin-right: 16rpx;
+      }
+    }
+  }
+}

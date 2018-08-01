@@ -1,0 +1,59 @@
+<!--index.wxml-->
+<view class="favorite">
+  <view class='tab-bar flex'>
+    <view class='tab flex'>
+      <span class=''>后宫</span>
+      <span class='current-tab'>发现</span>
+      <span class=''>科普</span>
+    </view>
+    <icon class='search' type="search" color="#222" size="14"/>
+  </view>
+  <scroll-view>
+    <view class="discover-list">
+      <view class='discover-item' wx:for="{{flow_data}}" wx:for-item="i">
+        <view class='header flex'>
+          <image class='pin' mode="widthFix"
+                 src="{{i.card_info.avatar}}"></image>
+          <view class='person-info'>
+            <view>{{i.card_info.name}}</view>
+            <view>{{i.card_info.like}}</view>
+          </view>
+          <view class='follow'>
+            已关注
+          </view>
+        </view>
+        <view class='disc'>{{i.detail_info.text}}</view>
+        <!--图片视屏-->
+        <view class='media flex'>
+          <video wx:for="{{i.detail_info.images}}"
+                 wx:for-item="j"
+                 wx:if="{{i.detail_info.type == 'video'}}"  id="myVideo"
+                 src="{{j}}"></video>
+          <image wx:if="{{i.detail_info.type == 'news'}}"
+                 wx:for="{{i.detail_info.images}}"
+                 wx:for-item="j"
+                 class="img {{i.detail_info.images.length == 1?'only-one':''}}"
+                 mode="scaleToFill"
+                 src="{{j}}"></image>
+        </view>
+        <!--评论点赞-->
+        <view class='commoent flex'>
+          <view class='commoent-item flex' >
+            <i class='iconfont icon-wodefankui'></i>
+            <text>50</text>
+          </view>
+          <view class='commoent-item flex' bindtap='like'>
+            <i class='iconfont icon-jushoucang'></i>
+            <text>50</text>
+          </view>
+          <view class='commoent-item flex'>
+            <i class='iconfont icon-lingcunwei'></i>
+            <text>50</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <z-footer position='index'></z-footer>
+  <z-like wx:if='{{like_show}}'></z-like>
+</view>

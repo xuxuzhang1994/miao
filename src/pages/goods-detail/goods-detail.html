@@ -1,0 +1,53 @@
+<!--index.wxml-->
+<custom-navigation title='物品详情' showBack='true'></custom-navigation>
+<view class='goods-detail'>
+  <swiper autoplay="true" circular="true" class="banner-block bg-white" duration="300" indicatorActiveColor="rgba(0, 0, 0, .5)" indicatorDots="{{goodsInfo.thumb_url.length>1}}" >
+    <swiper-item catchtap="mkadGo" class="item" data-path="{{item.path}}" wx:for="{{goodsInfo.thumb_url}}">
+      <image mode="aspectFill" src="{{item}}"></image>
+    </swiper-item>
+  </swiper>
+  <view class='goods-info'>
+    <view class='top flex'>
+      <view class='price'>
+        <iamge></iamge>
+        <span>￥30</span>
+      </view>
+      <view class='status'>已兑完</view>
+    </view>
+    <view class='bottom flex'>
+      <view>快递：免运费</view>
+      <view>剩余0件</view>
+      <view>已兑换1003件</view>
+    </view>
+  </view>
+  <view class='rule'>
+    <view class='title'>兑换规则</view>
+    <view>1.每天10点兑换，周末双倍上架</view>
+    <view>2.每天10点兑换，周末双倍上架</view>
+    <view>3.每天10点兑换，周末双倍上架</view>
+    <view>4.最终解释权归我所有</view>
+  </view>
+  <view class='disc'>
+    <view class='brand flex'>
+      <image src='{{goodsInfo.shop_logo}}'></image>
+      <span>Lorde</span>
+    </view>
+    <view class='pic-text'>
+      <image mode="widthFix" src='{{goodsInfo.content}}'></image>
+    </view>
+  </view>
+  <view class='footer-bar flex'>
+    <view class='left flex'>
+
+      <view class='commoent-item' bindtap='like'>
+        <i class='iconfont icon-home font-20'></i>
+        <view>首页</view>
+      </view>
+      <view class='commoent-item' >
+        <i class='iconfont icon-lingcunwei font-20'></i>
+        <view>分享</view>
+      </view>
+    </view>
+    <view class='exchange'>立即兑换</view>
+  </view>
+</view>

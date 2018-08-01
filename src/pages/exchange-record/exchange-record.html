@@ -1,0 +1,72 @@
+<custom-navigation title='我的' showBack='true'></custom-navigation>
+<view class='exchange-record'>
+  <view class='title'>兑换记录</view>
+  <view class='exchange-list'>
+    <view class='exchange-item flex' wx:for='{{[1,2,3,4]}}' catchtap='lookLogistics'>
+      <image src='https://cdn.maoka777.com/opo4k0WS4gkYOx95391vN6-4BHDg_1530689598_82756f.jpg'></image>
+      <view class='goods-info'>
+        <view class='top flex'>
+          <view class='name'>力狼猫粮</view>
+          <view class='number'>x1</view>
+        </view>
+        <view class='time'>2018-7-20</view>
+      </view>
+      <view class='operate-btn flex'>
+        <view class='btn'>查看物流</view>
+        <view class='btn gray-btn'>申诉</view>
+      </view>
+    </view>
+  </view>
+  <view class='logistics' wx:if='{{logistics}}'>
+    <view class='name'>顺丰速递</view>
+    <view class='logistics-list'>
+      <view class='logistics-item'>
+        <view class='info'>到达上海闵行区,准备揽件</view>
+        <view class='time'>2018-7-20 14:20</view>
+      </view>
+      <view class='logistics-item'>
+        <view class='info'>到达上海闵行区,准备揽件</view>
+        <view class='time'>2018-7-20 14:20</view>
+      </view>
+      <view class='logistics-item'>
+        <view class='info'>到达上海闵行区,准备揽件</view>
+        <view class='time'>2018-7-20 14:20</view>
+      </view>
+      <view class='logistics-item'>
+        <view class='info'>到达上海闵行区,准备揽件</view>
+        <view class='time'>2018-7-20 14:20</view>
+      </view>
+      <view class='logistics-item'>
+        <view class='info'>到达上海闵行区,准备揽件</view>
+        <view class='time'>2018-7-20 14:20</view>
+      </view>
+      <view class='logistics-item'>
+        <view class='info'>到达上海闵行区,准备揽件</view>
+        <view class='time'>2018-7-20 14:20</view>
+      </view>
+      <view class='logistics-item'>
+        <view class='info'>到达上海闵行区,准备揽件</view>
+        <view class='time'>2018-7-20 14:20</view>
+      </view><view class='logistics-item'>
+      <view class='info'>到达上海闵行区,准备揽件</view>
+      <view class='time'>2018-7-20 14:20</view>
+    </view><view class='logistics-item'>
+      <view class='info'>到达上海闵行区,准备揽件</view>
+      <view class='time'>2018-7-20 14:20</view>
+    </view>
+      <view class='logistics-item'>
+        <view class='info'>到达上海闵行区,准备揽件</view>
+        <view class='time'>2018-7-20 14:20</view>
+      </view>
+
+
+    </view>
+
+  </view>
+  <view class='mask' wx:if='{{logistics}}' catchtap='closeLogistics'>
+    <view>
+      <i class='iconfont icon-guanbi1'></i>
+    </view>
+  </view>
+
+</view>

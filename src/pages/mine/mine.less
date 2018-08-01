@@ -1,0 +1,108 @@
+.Pseudo-border-after() {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background:#ccc;
+  transform: scaleY(.5);
+}
+.mine{
+  font-size: 32rpx;
+  background: #f2f2f2;
+  color: #000;
+  .header{
+    align-items: center;
+    background: #ffc0cb;
+    padding: 30rpx;
+    position: relative;
+    .cover{
+      width: 100rpx;
+      border-radius: 10rpx;
+      margin-right: 20rpx;
+    }
+    .number{
+      font-size: 26rpx;
+      margin-top: 5rpx;
+    }
+  }
+  .empower{
+    background: #4ec93e;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 24rpx;
+    padding: 0 20rpx;
+    position: absolute;
+    right: 20rpx;
+    top: 50%;
+    transform: translateY(-50%);
+    align-items: center;
+    image{
+      width: 60rpx;
+      height: 60rpx;
+    }
+    .shouquan{
+      background: #4ec93e;
+      color: #fff !important;
+    }
+  }
+  .tab{
+    background: #FFF;
+    margin-top: 20rpx;
+    justify-content: center;
+    .tab-item{
+      height: 210rpx;
+      flex-grow: 1;
+      border-right: 1px solid #ccc;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      line-height: 1;
+      i{
+        font-size: 50rpx;
+        color: pink;
+        margin-top: 50rpx;
+        display: -webkit-box;
+      }
+      .text{
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+  .menu-list{
+    background: #fff;
+    padding: 0 30rpx;
+    padding-right: 0;
+    margin-top: 20rpx;
+    .menu-item{
+      height: 90rpx;
+      align-items: center;
+      position: relative;
+      justify-content: space-between;
+      &:after{
+        .Pseudo-border-after()
+      }
+      &:nth-last-child(1){
+        &:after{
+          height: 0;
+        }
+      }
+      .title{
+        align-items: center;
+        span{
+          margin-left: 20rpx;
+        }
+        i{
+          color: #000;
+          font-size: 40rpx;
+        }
+      }
+      .icon-fanhui2{
+        margin-right: 30rpx;
+        color: #999;
+      }
+    }
+  }
+}

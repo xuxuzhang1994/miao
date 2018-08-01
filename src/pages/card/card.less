@@ -1,0 +1,98 @@
+page{
+  background: #ffc0cb;
+}
+.card{
+  padding-bottom: 20rpx;
+  .tab{
+    height: 80rpx;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+    font-size: 32rpx;
+    .tab-item{
+      padding: 0 20rpx;
+      position: relative;
+      &:after{
+        content: '';
+        position: absolute;
+        height: 20rpx;
+        width: 1px;
+        background: #ccc;
+        top:50%;
+        transform: translateY(-50%);
+        right: 0;
+      }
+      &:nth-last-child(1){
+        &:after{
+         height: 0;
+        }
+      }
+    }
+    .active{
+      color: #222;
+    }
+  }
+  .card-detail{
+    background: #fff;
+    font-size: 24rpx;
+    margin: 0 20rpx;
+    border-radius: 10rpx;
+    padding: 30rpx;
+    color: #999;
+    justify-content: space-between;
+    margin-bottom: 20rpx;
+    .left{
+      .name{
+        padding-top: 15rpx;
+        font-size: 50rpx;
+      }
+      .other{
+        .sex{
+          background: rgb(90,149,253);
+          height: 35rpx;
+          color: #fff;
+          align-items: center;
+          border-radius: 10px;
+          padding: 0 20rpx;
+          text{
+            margin-left: 5rpx;
+          }
+        }
+        .age{
+          margin: 0 20rpx;
+        }
+      }
+      .weigth{
+        margin-top: 70rpx;
+      }
+      .energy,.weigth,.like{
+        align-items: center;
+        height: 40rpx;
+        line-height: 40rpx;
+        i{
+          width: 50rpx;
+          margin-top: 1rpx;
+        }
+      }
+    }
+    .right{
+      background: #fff;
+      .photo{
+        width: 180rpx;
+        height: 180rpx;
+        border-radius: 100%;
+      }
+      .card-no{
+        margin-top: 100rpx;
+      }
+    }
+  }
+  .add-card{
+    height: 140rpx;
+    line-height: 140rpx;
+    background: #fff;
+    margin: 20rpx;
+    border-radius: 10rpx;
+    padding: 0 30rpx;
+  }
+}

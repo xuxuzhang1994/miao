@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<custom-navigation title='用品商城' showBack='true'></custom-navigation>
+<view class='store'>
+  <view class='change-card flex'>
+    <span>实物</span>
+    <span>切换猫卡</span>
+  </view>
+  <view class='header flex'>
+    <view class='card-info flex'>
+      <image src='https://cdn.maoka777.com/opo4k0bsqOi8wAPFuu6eENP4opVQ_1529770108_ecd9ca.png'></image>
+      <view class='right'>
+        <view clsss='name'>faker</view>
+        <view class='sock'>180g</view>
+      </view>
+    </view>
+    <view class='earn'>零食可低现金,全场物品均为包邮价</view>
+  </view>
+  <view class='goods-list flex'>
+    <view class='goods-item' wx:for='{{[1,2,3,4,5,6,6]}}' catchtap='goDetail'>
+      <view class='goods-disc'>
+        <span>Petive Life 派提拉</span>
+      </view>
+      <image mode='widthFix' class='goods-image'
+              src='https://cdn.maoka777.com/opo4k0bsqOi8wAPFuu6eENP4opVQ_1529770108_ecd9ca.png'></image>
+      <view class='name'>豆腐砂</view>
+      <view class='bottom flex'>
+        <view class='price flex'>
+          <image src='../../../../../img/lingshi.png'></image>
+          <span>x 1</span>
+          <span class='number'>可低10元</span>
+        </view>
+        <view class='exchange-btn'>未开始</view>
+      </view>
+    </view>
+  </view>
+</view>

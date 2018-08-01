@@ -1,0 +1,250 @@
+.card-detail{
+  font-family: '微软雅黑';
+  background-color: #f2f2f2;
+}
+
+.banner{
+  background:linear-gradient(to right, rgb(251,204,44), rgb(235,115,42));
+  padding: 30rpx 0;
+}
+swiper{
+  height: 400rpx;
+}
+.card-item{
+  background: #fff;
+  font-size: 24rpx;
+  margin: 0 10rpx;
+  border-radius: 10rpx;
+  padding: 30rpx;
+  padding-bottom: 0;
+  color: #999;
+  justify-content: space-between;
+  height: 400rpx;
+  .left{
+    .name{
+      padding-top: 15rpx;
+      font-size: 50rpx;
+      text-align: left;
+    }
+    .other{
+      .sex{
+        background: rgb(90,149,253);
+        height: 35rpx;
+        color: #fff;
+        align-items: center;
+        border-radius: 10px;
+        padding: 0 20rpx;
+        text{
+          margin-left: 5rpx;
+        }
+      }
+      .age{
+        margin: 0 20rpx;
+      }
+    }
+    .weigth{
+      margin-top: 50rpx;
+    }
+    .energy,.weigth,.like{
+      align-items: center;
+      height: 40rpx;
+      line-height: 40rpx;
+      i{
+        width: 50rpx;
+        margin-top: 1rpx;
+      }
+    }
+  }
+  .right{
+    .photo{
+      width: 180rpx;
+      height: 180rpx;
+      border-radius: 100%;
+    }
+    .card-no{
+      margin-top: 80rpx;
+    }
+  }
+}
+.item{
+  text-align: center;
+}
+.swiper-img{
+  width: 620rpx;
+  border-radius: 20rpx;
+}
+
+.loves-body{
+  .name{
+    font-size: 32rpx;
+    margin-bottom: 10rpx;
+  }
+}
+.duihuan-btn{
+  position: absolute;
+  top: 72rpx;
+  right: 20rpx;
+  background: #fed719;
+  border-radius: 100px;
+  padding: 5rpx 20rpx;
+  color: #222;
+  font-size: 26rpx;
+}
+.progress-info {
+  height: 36rpx;
+  width: 100%;
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 50rpx;
+  overflow: hidden;
+  position: relative;
+  text{
+    font-size: 28rpx;
+  }
+}
+
+.progress-info .progress {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  animation: reverse progress-bar-stripes 0.4s linear infinite,animate-positive 2s;
+  border-radius: 50rpx;
+  background-color: #ed3a3a;
+  background-image: linear-gradient(-45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+  background-size: 40px 40px;
+  transition: all 0.3s ease;
+  border-left: 20rpx solid #ed3a3a;
+}
+
+@-webkit-keyframes progress-bar-stripes {
+  0% {
+    background-position: 40px 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@keyframes progress-bar-stripes {
+  0% {
+    background-position: 40px 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.progress-info text {
+  position: absolute;
+  right: 20rpx;
+  line-height: 31rpx;
+  top: 1px;
+}
+
+.sort-food{
+  padding:  30rpx;
+  background: #fff;
+  position: relative;
+  .top{
+    width: 80%;
+  }
+  .bottom{
+    margin-top: 50rpx;
+    justify-content: space-between;
+    font-size: 34rpx;
+    .left{
+      view:nth-child(2){
+        color: #999;
+        font-size: 30rpx;
+      }
+    }
+    .right{
+      .like-item{
+        width: 80rpx;
+        height: 80rpx;
+        border-radius: 15rpx;
+        margin-left: 15rpx;
+      }
+    }
+  }
+}
+
+.doctor{
+  justify-content: space-between;
+  padding: 0 30rpx;
+  height: 110rpx;
+  align-items: center;
+  background: #fff;
+  margin-top: 20rpx;
+  font-size: 34rpx;
+}
+.meet{
+  margin-top: 20rpx;
+  background: #fff;
+  padding: 0 30rpx;
+  align-items: center;
+  height: 110rpx;
+  image{
+    width: 80rpx;
+    height: 80rpx;
+  }
+  .info{
+    flex-grow: 1;
+    margin-left: 15rpx;
+    .time{
+      font-size: 34rpx;
+    }
+    .number{
+      font-size: 28rpx;
+      color: #999;
+    }
+  }
+}
+.footer{
+  height: 120rpx;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+  width: 100%;
+  padding: 0 30rpx;
+  justify-content: space-between;
+  .mine{
+    image{
+      width: 80rpx;
+      height: 80rpx;
+      border-radius: 100%;
+      margin-right: 10rpx;
+    }
+    .name{
+      font-size: 30rpx;
+    }
+    .number{
+      font-size: 24rpx;
+      color: #999;
+    }
+  }
+  .menu{
+    font-size: 24rpx;
+    text-align: center;
+    color: #999;
+    flex-grow: 1;
+    justify-content: space-around;
+    margin-right: 20rpx;
+    i{
+      font-size: 50rpx !important;
+    }
+  }
+  .cancle{
+    width: 180rpx;
+    text-align: center;
+    height: 70rpx;
+    line-height: 70rpx;
+    border-radius: 100rpx;
+    background: #fed719;
+    font-size: 28rpx;
+  }
+}
+

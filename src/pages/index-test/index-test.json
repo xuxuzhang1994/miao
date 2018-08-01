@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "z-footer": "/components/footer/footer",
+    "z-like": "/components/like/like"
+  }
+}

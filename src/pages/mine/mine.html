@@ -1,0 +1,74 @@
+<custom-navigation title='我的'></custom-navigation>
+<view class='mine'>
+  <view class='header flex'>
+    <view class='flex' wx:if='{{userInfo.userinfo}}'>
+      <image class='cover' mode="widthFix"
+             src="{{userInfo.userinfo.avatarUrl}}"></image>
+      <view class='info'>
+        <view>{{userInfo.userinfo.nickName}}</view>
+        <view class='number'>已有{{userInfo.cardList.length}}张猫卡</view>
+      </view>
+    </view>
+    <!-- 需要使用 button 来授权登录 -->
+    <view class='flex' wx:if='{{!userInfo.userinfo}}'>
+      <image class='cover' mode="widthFix"
+             src="../../../../../img/cat5.png"></image>
+      <view class='info'>
+        <view>游客</view>
+        <view class='number'>您还没有猫卡</view>
+      </view>
+      <view class='empower flex'>
+        <image src='../../../../../img/icon/7.png'></image>
+        <button wx:if="{{canIUse}}" class='btn-null shouquan' open-type="getUserInfo"
+                bindgetuserinfo="bindGetUserInfo">使用微信登录
+        </button>
+        <view wx:else>请升级微信版本</view>
+      </view>
+    </view>
+
+  </view>
+  <view class='tab flex' >
+    <view class='tab-item flex'>
+      <i class='iconfont icon-maozhao'></i>
+      <p class='text'>投食记录</p>
+    </view>
+    <view class='tab-item flex'>
+      <i class='iconfont icon-maoliang'></i>
+      <p class='text'>罐头兑换</p>
+    </view>
+    <view class='tab-item flex'>
+      <i class='iconfont icon-maoliang'></i>
+      <p class='text'>罐头兑换</p>
+    </view>
+  </view>
+  <view class='menu-list'>
+    <view class='menu-item flex' catchtap='goRecord'>
+      <view class='title flex'>
+        <i class='iconfont icon-shengritequan'></i>
+        <span>兑换记录</span>
+      </view>
+      <i class='iconfont icon-fanhui2 font-12'></i>
+    </view>
+    <view class='menu-item flex'>
+      <view class='title flex'>
+        <i class='iconfont icon-bangzhu '></i>
+        <span>常见问题</span>
+      </view>
+      <i class='iconfont icon-fanhui2 font-12'></i>
+    </view>
+    <view class='menu-item flex'>
+      <view class='title flex'>
+        <i class='iconfont icon-iconfontzhizuobiaozhun29'></i>
+        <span>关于猫卡</span>
+      </view>
+      <i class='iconfont icon-fanhui2 font-12'></i>
+    </view>
+    <view class='menu-item flex'>
+      <view class='title flex'>
+        <i class='iconfont icon-gongnengjianyi'></i>
+        <span>设置</span>
+      </view>
+      <i class='iconfont icon-fanhui2 font-12'></i>
+    </view>
+  </view>
+</view>

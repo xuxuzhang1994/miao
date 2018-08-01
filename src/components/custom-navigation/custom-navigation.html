@@ -1,0 +1,26 @@
+<block>
+    <view class='navigation-cover'>
+        <view class='who flex' wx:if='{{!title}}' bindtap='changeCard'>
+            <image mode="widthFix"
+                    src="{{currentCard.cardInfo.picture}}"></image>
+            <span>{{currentCard.cardInfo.name}}</span>
+            <i class='iconfont icon-fanhui2'></i>
+        </view>
+        <view class='' wx:if='{{title}}'>{{title}}</view>
+        <view catchtap="goBack" class="left-btn" wx:if='{{showBack}}'>
+            <i class="iconfont icon-fanhui1"></i>
+        </view>
+    </view>
+    <view class='changeCardModel flex {{cardModel?"fadeIn":"fadeOut"}}'>
+        <view class='card-item {{item.cardid==cardid?"current-card":""}}' wx:for='{{cardList}}' data-cardinfo='{{item}}'
+              bindtap='choosed'>
+            <image
+                   src="{{item.cardInfo.picture}}"></image>
+            <view>{{item.cardInfo.name}}</view>
+        </view>
+    </view>
+</block>
+<view class="view-welcome" wx:if="{{show_welcome}}">
+    <image mode="widthFix" src="../../img/logo.png"></image>
+    <text class=""> © 2018猫卡</text>
+</view>
